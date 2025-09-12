@@ -1,22 +1,3 @@
-function invT = TransInv(T)
-% *** CHAPTER 3: RIGID-BODY MOTIONS ***
-% Takes a transformation matrix T.
-% Returns its inverse. 
-% Uses the structure of transformation matrices to avoid taking a matrix
-% inverse, for efficiency.
-% Example Input:
-% 
-% clear; clc;
-% T = [[1, 0, 0, 0]; [0, 0, -1, 0]; [0, 1, 0, 3]; [0, 0, 0, 1]];
-% invT = TransInv(T)
-% 
-% Ouput:
-% invT =
-%     1     0     0     0
-%     0     0     1    -3
-%     0    -1     0     0
-%     0     0     0     1
-
-[R, p] = TransToRp(T);
-invT = [R', -R' * p; 0, 0, 0, 1];
-end
+version https://git-lfs.github.com/spec/v1
+oid sha256:8ce0b513712f49e3d406bfce55da316ac3c64381000568c63c67d39ae2497dc4
+size 533

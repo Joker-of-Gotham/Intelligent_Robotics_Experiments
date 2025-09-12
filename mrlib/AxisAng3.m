@@ -1,22 +1,3 @@
-function [omghat, theta] = AxisAng3(expc3)
-% *** CHAPTER 3: RIGID-BODY MOTIONS ***
-% Takes A 3-vector of exponential coordinates for rotation.
-% Returns the unit rotation axis omghat and the corresponding rotation 
-% angle theta.
-% Example Input:
-% 
-% clear; clc;
-% expc3 = [1; 2; 3];
-% [omghat, theta] = AxisAng3(expc3)  
-% 
-% Output:
-% omghat =
-%    0.2673
-%    0.5345
-%    0.8018
-% theta =
-%    3.7417
-
-theta = norm(expc3);
-omghat = expc3 / theta;
-end
+version https://git-lfs.github.com/spec/v1
+oid sha256:399e0c447dc1be6c9c37d51c7a71a31aae16e1e611ba9f09c00c79b9e9050bdb
+size 454

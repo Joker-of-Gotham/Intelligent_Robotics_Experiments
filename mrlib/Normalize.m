@@ -1,19 +1,3 @@
-function norm_v = Normalize(V)
-% *** BASIC HELPER FUNCTIONS ***
-% Takes in a vector.
-% Scales it to a unit vector.
-% Example Input:
-% 
-% clear; clc;
-% V = [1; 2; 3];
-% norm_v = Normalize(V)
-% 
-% Output:
-% norm_v =
-%    0.2673
-%    0.5345
-%    0.8018
-
-norm_v = V / norm(V);
-end
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:54b9459dbfb215a61e46443abad0d9faae75595efe73e399af7807a1dcb5bc06
+size 278

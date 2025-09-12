@@ -1,18 +1,3 @@
-function invR = RotInv(R)
-% *** CHAPTER 3: RIGID-BODY MOTIONS ***
-% Takes a 3x3 rotation matrix.
-% Returns the inverse (transpose).
-% Example Input:
-% 
-% clear; clc;
-% R = [0, 0, 1; 1, 0, 0; 0, 1, 0];
-% invR = RotInv(R)
-% 
-% Output:
-% invR =
-%     0     1     0
-%     0     0     1
-%     1     0     0
-
-invR = R';
-end
+version https://git-lfs.github.com/spec/v1
+oid sha256:08e7145b66681bfbae15eb690031eaa63694ba15b85ecfb31832326c367ed5fe
+size 317

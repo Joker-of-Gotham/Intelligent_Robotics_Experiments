@@ -1,16 +1,3 @@
-function judge = NearZero(near)
-% *** BASIC HELPER FUNCTIONS ***
-% Takes a scalar.
-% Checks if the scalar is small enough to be neglected.
-% Example Input:
-%  
-% clear; clc;
-% near = -1e-7;
-% judge = NearZero(near)
-% 
-% Output:
-% judge =
-%     1
-
-judge = norm(near) < 1e-6;
-end
+version https://git-lfs.github.com/spec/v1
+oid sha256:72a9fdccd78f48f527c383b5d0a5bf79539f0e159df71fded215215732e9dacc
+size 278
