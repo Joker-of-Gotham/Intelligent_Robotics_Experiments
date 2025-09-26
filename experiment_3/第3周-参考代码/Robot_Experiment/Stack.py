@@ -285,55 +285,47 @@ def distinguish_colorr(frame1):
 #         kinematics_move(kms_x1,kms_y1,50,2000)
 # 这里有过修正，非原版代码
 def get_kms_data(c_x,c_y,c_h,c_angle):
-    global width,hight,clamp_flag,Running,clamp_step,place_step,kms_x,kms_y,servo_yuntai,servo_zhuazi
+    global width,hight,Running,clamp_step,kms_x,kms_y,servo_yuntai,servo_zhuazi
            
-    kms_x = (c_x-width/2+0)*30/c_h
-    kms_y = 160-((c_y-hight/2-0)*30/c_h)
-    #计算云台旋转角度
-    if(kms_x == 0 and kms_y != 0) :
-        theta6 = 0.0
-    elif(kms_y == 0 and kms_x > 0):
-        theta6 = 90
-    elif(kms_y == 0 and kms_x < 0):
-        theta6 = -90
-    else :
-        theta6 = atan(kms_x/kms_y)*180.0/pi
-                       
-    servo_yuntai = int(1500-2000.0 * theta6/ 270.0)
-    # print('servo_yuntai:', servo_yuntai) # 在非debug模式下可以注释掉
+    # 步骤1: 像素坐标到物理坐标的转换
+    kms_x = (c_x - width/2) * 30 / c_h
+    kms_y = 160 - (c_y - hight/2) * 30 / c_h
 
-    #计算爪子旋转角度
-    if(c_angle<0):
-        c_angle = c_angle+90               
-    if (c_angle>45):
-        c_angle = 90-c_angle
-       
-    if(theta6<0):
-        servo_zhuazi = int(1500+2000.0 * (-c_angle+abs(theta6))/ 270.0)
-        # print("------------------------")
+    # 步骤2: 计算云台(ID 000)的旋转角度 theta6
+    if kms_x == 0:
+        theta6 = 0.0
     else:
-        servo_zhuazi = int(1500-2000.0 * (c_angle+abs(theta6))/ 270.0)
-        # print("++++++++++++++++++++++")
+        # 使用 atan2 来处理所有象限，更稳健
+        theta6 = atan2(kms_x, kms_y) * 180.0 / pi
+                       
+    # 步骤3: 将云台角度转换为PWM值
+    servo_yuntai = int(1500 - 2000.0 * theta6 / 270.0)
+
+    # 步骤4: 计算爪子旋转舵机(ID 004)的角度
+    # 将OpenCV输出的-90~0的角度，转换为0~90度
+    if c_angle < 0:
+        c_angle += 90               
+    # 确保角度在0-90范围内，避免万向节锁问题
+    if c_angle > 45:
+        c_angle = 90 - c_angle
+       
+    # 爪子需要补偿云台的旋转角度，以保持面向前方
+    # 注意: 这个补偿逻辑与具体的机械结构强相关，可能需要实际测试调整
+    if theta6 < 0:
+        servo_zhuazi = int(1500 + 2000.0 * (-c_angle + abs(theta6)) / 270.0)
+    else:
+        servo_zhuazi = int(1500 - 2000.0 * (c_angle + abs(theta6)) / 270.0)
      
-    clamp_step = 1
-    eEvent.set()  #线程旗标标志为真    
-    Running = False
+    print(f"\n--- [Data Processed] ---")
+    print(f"Pixel Coords (c_x, c_y): ({c_x:.2f}, {c_y:.2f})")
+    print(f"Physical Coords (kms_x, kms_y): ({kms_x:.2f}, {kms_y:.2f})")
+    print(f"Calculated Angles (theta6, c_angle): ({theta6:.2f}, {c_angle:.2f})")
+    print(f"Calculated PWMs (Yuntai, Zhuazi): ({servo_yuntai}, {servo_zhuazi})")
     
-    # --- 已修正的 Debug 代码块 ---
-    debug = False
-    if debug:
-        print(f"--- [Debug Info in get_kms_data] ---")
-        print(f"Calculated kms_x: {kms_x:.2f}, kms_y: {kms_y:.2f}")
-        print(f"Calculated theta6: {theta6:.2f}")
-        print(f"Calculated servo_yuntai PWM: {servo_yuntai}")                              
-        print(f"Object angle c_angle: {c_angle:.2f}")
-        print(f"Calculated servo_zhuazi PWM: {servo_zhuazi}")
-        
-        # 原错误代码：kinematics_move(kms_x1,kms_y1,50,2000)
-        # 修正后：
-        print(f"Calling kinematics_move with corrected values: ({kms_x:.2f}, {kms_y:.2f}, 50)")
-        kinematics_move(kms_x, kms_y, 50, 2000)
-        # --- 修正结束 ---
+    # 步骤5: 设置状态，触发机械臂运动
+    clamp_step = 1
+    eEvent.set()      # 唤醒 clamp_wood 线程
+    Running = False   # 暂停图像处理
         
 #逆运动学算法
 def kinematics_move(x,y,z,mytime): 
