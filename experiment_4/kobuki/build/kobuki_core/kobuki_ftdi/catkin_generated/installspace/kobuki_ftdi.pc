@@ -1,0 +1,8 @@
+prefix=/home/haiden/kobuki/install
+
+Name: kobuki_ftdi
+Description: Description of kobuki_ftdi
+Version: 0.7.10
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lusb -lftdi
+Requires: ecl_command_line

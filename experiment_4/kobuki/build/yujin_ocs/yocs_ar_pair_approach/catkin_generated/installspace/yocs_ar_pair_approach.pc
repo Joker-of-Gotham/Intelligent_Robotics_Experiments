@@ -1,0 +1,8 @@
+prefix=/home/haiden/kobuki/install
+
+Name: yocs_ar_pair_approach
+Description: Description of yocs_ar_pair_approach
+Version: 0.8.2
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

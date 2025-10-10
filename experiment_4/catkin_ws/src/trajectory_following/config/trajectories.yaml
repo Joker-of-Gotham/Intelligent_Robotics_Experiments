@@ -1,0 +1,13 @@
+# 定义要执行的形状序列和参数
+shape_sequence: ['circle', 'star', 'polygon'] # 按此顺序执行
+loop_count: 2               # 整个序列重复执行2次
+
+# 全局速度设置
+speed: 0.3                  # 直线移动速度 (m/s)
+turn_speed: 0.6             # 原地旋转角速度 (rad/s)
+
+# 各形状的参数
+circle_radius: 0.8          # 圆形半径 (m)
+star_side_length: 1.2       # 五角星边长 (m)
+polygon_sides: 4            # 正多边形边数 (这里是正方形)
+polygon_side_length: 1.0    # 正多边形边长 (m)

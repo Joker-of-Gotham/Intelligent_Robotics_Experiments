@@ -1,0 +1,7 @@
+set(rocon_app_utilities_SETUP_PY_SETUP_MODULE "distutils.core")
+set(rocon_app_utilities_SETUP_PY_VERSION "0.8.0")
+set(rocon_app_utilities_SETUP_PY_SCRIPTS "scripts/rocon_app")
+set(rocon_app_utilities_SETUP_PY_PACKAGES "rocon_app_utilities")
+set(rocon_app_utilities_SETUP_PY_PACKAGE_DIRS "src/rocon_app_utilities")
+set(rocon_app_utilities_SETUP_PY_MODULES "")
+set(rocon_app_utilities_SETUP_PY_MODULE_DIRS "")

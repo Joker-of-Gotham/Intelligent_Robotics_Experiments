@@ -1,0 +1,8 @@
+prefix=/home/haiden/rocon/install
+
+Name: concert_msgs
+Description: Description of concert_msgs
+Version: 0.9.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: gateway_msgs message_runtime rocon_app_manager_msgs rocon_std_msgs std_msgs uuid_msgs

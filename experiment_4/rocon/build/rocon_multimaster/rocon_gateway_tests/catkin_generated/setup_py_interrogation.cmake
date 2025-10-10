@@ -1,0 +1,7 @@
+set(rocon_gateway_tests_SETUP_PY_SETUP_MODULE "distutils.core")
+set(rocon_gateway_tests_SETUP_PY_VERSION "0.8.1")
+set(rocon_gateway_tests_SETUP_PY_SCRIPTS "")
+set(rocon_gateway_tests_SETUP_PY_PACKAGES "")
+set(rocon_gateway_tests_SETUP_PY_PACKAGE_DIRS "")
+set(rocon_gateway_tests_SETUP_PY_MODULES "")
+set(rocon_gateway_tests_SETUP_PY_MODULE_DIRS "")

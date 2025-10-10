@@ -1,0 +1,8 @@
+prefix=/home/haiden/kobuki/devel
+
+Name: yocs_joyop
+Description: Description of yocs_joyop
+Version: 0.8.2
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

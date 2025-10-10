@@ -1,0 +1,8 @@
+prefix=/home/haiden/rocon/devel
+
+Name: rocon_gateway_utils
+Description: Description of rocon_gateway_utils
+Version: 0.8.1
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,8 @@
+prefix=/home/haiden/rocon/devel
+
+Name: rocon_test
+Description: Description of rocon_test
+Version: 0.8.1
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

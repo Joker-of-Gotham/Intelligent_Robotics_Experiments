@@ -1,0 +1,8 @@
+prefix=/home/haiden/kobuki/install
+
+Name: yocs_rapps
+Description: Description of yocs_rapps
+Version: 0.8.2
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

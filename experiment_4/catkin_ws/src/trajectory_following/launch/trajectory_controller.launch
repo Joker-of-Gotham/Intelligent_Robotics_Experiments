@@ -1,0 +1,11 @@
+<launch>
+    <!-- 启动 RViz 可视化轨迹 -->
+    <include file="$(find show_trajectory)/launch/show_trajectory_rviz.launch" />
+
+    <!-- 启动闭环轨迹控制节点 -->
+    <!-- 注意：rosparam 标签现在位于 node 标签内部 -->
+    <node name="trajectory_controller" pkg="trajectory_following" type="trajectory_controller" output="screen">
+        <rosparam file="$(find trajectory_following)/config/trajectories.yaml" command="load" />
+    </node>
+
+</launch>

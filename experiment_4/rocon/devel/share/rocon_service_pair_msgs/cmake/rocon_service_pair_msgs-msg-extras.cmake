@@ -1,0 +1,2 @@
+set(rocon_service_pair_msgs_MESSAGE_FILES "/home/haiden/rocon/src/rocon_msgs/rocon_service_pair_msgs/msg/TestiesPair.msg;/home/haiden/rocon/src/rocon_msgs/rocon_service_pair_msgs/msg/TestiesPairRequest.msg;/home/haiden/rocon/src/rocon_msgs/rocon_service_pair_msgs/msg/TestiesPairResponse.msg;/home/haiden/rocon/src/rocon_msgs/rocon_service_pair_msgs/msg/TestiesRequest.msg;/home/haiden/rocon/src/rocon_msgs/rocon_service_pair_msgs/msg/TestiesResponse.msg")
+set(rocon_service_pair_msgs_SERVICE_FILES "")

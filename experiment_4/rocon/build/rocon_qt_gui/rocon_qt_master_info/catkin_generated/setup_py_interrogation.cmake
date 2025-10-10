@@ -1,0 +1,7 @@
+set(rocon_qt_master_info_SETUP_PY_SETUP_MODULE "distutils.core")
+set(rocon_qt_master_info_SETUP_PY_VERSION "0.9.2")
+set(rocon_qt_master_info_SETUP_PY_SCRIPTS "")
+set(rocon_qt_master_info_SETUP_PY_PACKAGES "rocon_qt_master_info")
+set(rocon_qt_master_info_SETUP_PY_PACKAGE_DIRS "src/rocon_qt_master_info")
+set(rocon_qt_master_info_SETUP_PY_MODULES "")
+set(rocon_qt_master_info_SETUP_PY_MODULE_DIRS "")

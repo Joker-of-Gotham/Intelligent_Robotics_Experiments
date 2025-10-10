@@ -1,0 +1,8 @@
+prefix=/home/haiden/kobuki/install
+
+Name: yocs_msgs
+Description: Description of yocs_msgs
+Version: 0.6.3
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: actionlib_msgs std_msgs geometry_msgs std_srvs message_runtime

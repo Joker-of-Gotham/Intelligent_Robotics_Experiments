@@ -1,0 +1,2 @@
+set(rocon_device_msgs_MESSAGE_FILES "/home/haiden/rocon/src/rocon_msgs/rocon_device_msgs/msg/Hue.msg;/home/haiden/rocon/src/rocon_msgs/rocon_device_msgs/msg/HueState.msg;/home/haiden/rocon/src/rocon_msgs/rocon_device_msgs/msg/HueArray.msg;/home/haiden/rocon/src/rocon_msgs/rocon_device_msgs/msg/Device.msg;/home/haiden/rocon/src/rocon_msgs/rocon_device_msgs/msg/Devices.msg")
+set(rocon_device_msgs_SERVICE_FILES "/home/haiden/rocon/src/rocon_msgs/rocon_device_msgs/srv/GetDeviceList.srv")

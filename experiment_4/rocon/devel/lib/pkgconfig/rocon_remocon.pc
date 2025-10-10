@@ -1,0 +1,8 @@
+prefix=/home/haiden/rocon/devel
+
+Name: rocon_remocon
+Description: Description of rocon_remocon
+Version: 0.9.2
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

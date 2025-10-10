@@ -1,0 +1,7 @@
+set(rocon_test_SETUP_PY_SETUP_MODULE "distutils.core")
+set(rocon_test_SETUP_PY_VERSION "0.8.1")
+set(rocon_test_SETUP_PY_SCRIPTS "scripts/rocon_test")
+set(rocon_test_SETUP_PY_PACKAGES "rocon_test")
+set(rocon_test_SETUP_PY_PACKAGE_DIRS "src/rocon_test")
+set(rocon_test_SETUP_PY_MODULES "")
+set(rocon_test_SETUP_PY_MODULE_DIRS "")
