@@ -1,0 +1,6 @@
+<launch>
+  <arg name="custom_hector_launch_file" default="$(find turtlebot_navigation)/launch/includes/hector/hector.launch.xml"/>
+  <include file="$(arg custom_hector_launch_file)"/>
+</launch>
+
+
